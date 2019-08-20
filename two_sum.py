@@ -16,12 +16,7 @@ Approach:
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for i in nums:
-            subtraction = target - i
-            try:
-                index1 = nums.index(i)
-                index2 = nums.index(subtraction)
-                return [index1,index2]
-            except:
-                pass
-        
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[j] == target - nums[i]:
+                    return [i,j]
